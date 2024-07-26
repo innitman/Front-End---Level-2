@@ -102,7 +102,11 @@ body {
   }
 
   & .card-product-info {
-    padding: var(--spacing-4);
+    padding: var(--spacing-5);
+
+    @media (min-width: 600px) {
+      padding: var(--spacing-7);
+    }
 
     & .card-category {
       text-transform: uppercase;
@@ -142,7 +146,6 @@ body {
       }
 
       & .card-price-new {
-        font-feature-settings: "clig" off, "liga" off;
         font-family: Fraunces;
         font-size: 2rem;
         font-weight: 700;
@@ -175,7 +178,6 @@ body {
 
     button:hover {
       background: var(--very-dark-blue);
-      color: white;
       cursor: pointer;
     }
   }
