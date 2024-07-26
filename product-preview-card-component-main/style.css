@@ -1,0 +1,181 @@
+@import url("reset.css");
+
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/montserrat-v26-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/montserrat-v26-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/montserrat-v26-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* fraunces-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/fraunces-v31-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* fraunces-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/fraunces-v31-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+}
+
+html {
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
+    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
+
+  font-family: "Outfit", var(--font-sans-serif);
+  font-size: calc((14 / 16) * 1rem);
+  line-height: 1.2;
+}
+
+body {
+  background-color: var(--stone-100);
+  color: var(--rose-800);
+}
+
+.center-my-child {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+}
+
+.recipe-card {
+  background-color: var(--white);
+  width: min(700px, 100%);
+  padding: var(--spacing-5);
+
+  @media (min-width: 700px) {
+    margin-block: var(--spacing-5);
+    border-radius: 10px;
+  }
+
+  & h1 {
+    font-family: "Young Serif", var(--font-serif);
+    font-size: 2.4rem;
+    color: var(--stone-900);
+    margin-block: var(--spacing-5);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  & h2 {
+    font-family: "Young Serif", var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--brown-800);
+    margin-block: var(--spacing-4);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  & p {
+    margin-block: var(--spacing-3);
+  }
+
+  & li {
+    margin-block-end: var(--spacing-2);
+    padding-inline-start: var(--spacing-5);
+  }
+
+  li::marker {
+    font-size: 0.7rem;
+  }
+
+  ol li::marker {
+    font-weight: bold;
+    font-size: inherit;
+  }
+
+  & ul,
+  ol {
+    padding-inline-start: var(--spacing-4);
+  }
+
+  hr {
+    margin-block: var(--spacing-5);
+    border: 1px solid var(--stone-150);
+  }
+
+  & img {
+    border-radius: 10px;
+    object-fit: scale-down;
+    margin-block-end: var(--spacing-4);
+  }
+
+  & table {
+    width: 100%;
+
+    & th,
+    td {
+      text-align: left;
+      border-bottom: 1px solid var(--stone-150);
+      padding-block: var(--spacing-3);
+    }
+
+    & th {
+      font-weight: 400;
+      padding-inline-start: var(--spacing-3);
+    }
+
+    & td {
+      font-weight: 700;
+      color: var(--brown-800);
+    }
+  }
+
+  & tr:last-child td,
+  tr:last-child th {
+    border-bottom: none;
+  }
+
+  & .recipe-card-preparation {
+    background-color: var(--rose-50);
+    padding: var(--spacing-4);
+    margin-block: var(--spacing-5);
+
+    & h2 {
+      font-size: 1.3rem;
+      font-family: inherit;
+      color: inherit;
+      margin-block-end: var(--spacing-3);
+    }
+  }
+}
